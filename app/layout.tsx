@@ -1,16 +1,23 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import React from "react"
+import { Metadata } from "next"
+import { Poppins, Fira_Code, Lora } from "next/font/google"
+import "./globals.css"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const _poppins = Poppins({
   subsets: ["latin"],
-});
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
+})
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const _firaCode = Fira_Code({
   subsets: ["latin"],
-});
+  variable: "--font-fira-code",
+})
+
+const _lora = Lora({
+  subsets: ["latin"],
+  variable: "--font-lora",
+})
 
 export const metadata: Metadata = {
   title: "Yeera Tracker App",
@@ -25,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`font-sans antialiased`}
       >
         {children}
       </body>
